@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as weekNum from 'current-week-number';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-schedule',
@@ -90,14 +92,18 @@ export class ScheduleComponent implements OnInit {
 };
 
   private PERSONS: any;
+  private dev: any;
   private WEEK: any;
   private personSelected = 'PERSON1';
+  private data: any;
+  private AssignPersons: any;
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.PERSONS = this.returnPersons();
-    this.WEEK = this.getCurrentWeekSchedule();
+    this.WEEK = this.getCurrentWeekSchedule();  
+    this.setData();
   }
 
   getCurrentWeekSchedule(): any {
@@ -114,5 +120,22 @@ export class ScheduleComponent implements OnInit {
 
   returnPersons(): any {
     return ["PERSON1","PERSON2","PERSON3","PERSON4"];
+  }
+
+  getAssignPersonsSoport(): Observable<any>{
+    return this.http.get<any>('http://172.30.1.89:8072/business/GetAssignPersonsSoport');
+  }
+
+  setData(){
+    this.getAssignPersonsSoport().subscribe({
+      next: data => {
+        let res = data;
+        this.AssignPersons = res;
+      },
+      error: error => {
+        console.log('Ocurrs a error', error);
+      }
+    });
+    console.log('entro');
   }
 }

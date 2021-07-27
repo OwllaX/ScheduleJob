@@ -9,9 +9,11 @@
     </ion-item>
   </div>
 
-  <div style="margin-left: 5rem; margin-right: 25px; margin-top: 25px;">
-    <h2> Semana actual {{ WEEK }}</h2>
-  </div>
+  <ion-item style="margin-left: 25px; margin-right: 25px; margin-top: 25px;">
+    <h2 style="margin-left: auto; margin-right: auto;"><b>Semana actual {{ WEEK }}</b></h2>
+  </ion-item>
+
+  <hr>
 
   <div style="margin-left: 25px; margin-right: 25px;">
     <ion-item>
@@ -30,6 +32,31 @@
           <ion-col style="font-size: 1.1rem;"><b>Día</b></ion-col>
           <ion-col style="font-size: 1.1rem;"><b>Diurno</b></ion-col>
           <ion-col style="font-size: 1.1rem;"><b>Nocturno</b></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </div>
+
+  <ion-item lines='none' style="margin-left: 25px; margin-right: 25px; margin-top: 25px;">
+    <h2 style="margin-left: auto; margin-right: auto;"><b>Asignación de personas</b></h2>
+  </ion-item>
+
+  <hr>
+
+  <div style="margin-left: 25px; margin-right: 25px;">
+    <ion-item *ngIf="this.AssignPersons">
+      <ion-grid>
+        <ion-row>
+          <ion-col style="font-size: 1.1rem;"><b>Persona</b></ion-col>
+          <ion-col style="font-size: 1.1rem;"><b>Desarrollador</b></ion-col>
+        </ion-row>
+        <ion-row *ngFor="let x of this.AssignPersons">
+          <ion-col>{{ x.PERSON }}</ion-col>
+          <ion-col>{{ x.DEV }}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col style="font-size: 1.1rem;"><b>Persona</b></ion-col>
+          <ion-col style="font-size: 1.1rem;"><b>Desarrollador</b></ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
