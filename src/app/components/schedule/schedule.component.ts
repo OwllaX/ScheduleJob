@@ -123,7 +123,7 @@ export class ScheduleComponent implements OnInit {
   }
 
   getAssignPersonsSoport(): Observable<any>{
-    return this.http.get<any>('http://172.30.1.89:8072/business/GetAssignPersonsSoport');
+    return this.http.get<any>('http://186.176.206.154:8088/business/GetAssignPersonsSupport');
   }
 
   setData(){

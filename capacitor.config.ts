@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.soportSchedule.app',
-  appName: 'Horario de Soporte',
+  appId: 'io.ionic.starter',
+  appName: 'ScheduleJob',
   webDir: 'www',
   bundledWebRuntime: false
 };

@@ -1,4 +1,4 @@
-package com.soportSchedule.app;
+package com.supportSchedule.app;
 
 import com.getcapacitor.BridgeActivity;
 

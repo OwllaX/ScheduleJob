@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">Horario de Soporte</string>
     <string name="title_activity_main">Horario de Soporte</string>
-    <string name="package_name">com.soportSchedule.app</string>
-    <string name="custom_url_scheme">com.soportSchedule.app</string>
+    <string name="package_name">com.supportSchedule.app</string>
+    <string name="custom_url_scheme">com.supportSchedule.app</string>
 </resources>
